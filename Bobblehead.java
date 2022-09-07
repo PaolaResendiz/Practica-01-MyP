@@ -1,4 +1,4 @@
-public class Bobblehead implements Poder{
+public class Bobblehead implements PoderKorby{
 	private String nombre = "Bobblehead";
 	private String frase = "Lanza burbujas con ácido. Quita al contrincante 68 HP. Bobble head se lastima asi mismo y pierde 13 HP";
 	private String clase = "Sauropsida.";

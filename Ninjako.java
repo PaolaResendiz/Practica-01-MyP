@@ -1,4 +1,4 @@
-public class Ninjako implements Poder{
+public class Ninjako implements PoderKorby{
 	private String nombre = "Ninjako";
 	private String frase = "Golpea más fuerte y rápido a su enemigo. Quita al contrincante 41 HP ";
 	private String clase = "Sauropsida.";

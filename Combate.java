@@ -2,48 +2,56 @@ import java.util.Scanner;
 
 public class Combate{
 
-	/* Objeto de contexto. */
-	private PoderKorby Korby;
-    private PoderMegaman Megaman;
-	private PoderDittu Dittu;
 	
-	private void transformacionKorby(PoderKorby nuevoPoder){
-		Korby = nuevoPoder;
-		System.out.println ("Korby replica la habilidad de "  /* nuevoPoder.getNombre() */);
-	}
+// 	/* Objeto de contexto. */
+	
+//     private PoderMegaman Megaman;
+// 	private PoderDittu Dittu;
+	
+	
 
-	private void transformacionMegaman(PoderMegaman nuevoPoder){
-		Megaman = nuevoPoder;
-		System.out.println ("Korby replica la habilidad de "  /* nuevoPoder.getNombre() */);
-	}
+// 	private void transformacionMegaman(PoderMegaman nuevoPoder){
+// 		Megaman = nuevoPoder;
+// 		System.out.println ("Korby replica la habilidad de "  /* nuevoPoder.getNombre() */);
+// 	}
 
-	private void transformacionKorby(PoderDittu nuevoPoder){
-		Dittu = nuevoPoder;
-		System.out.println ("Korby replica la habilidad de "  /* nuevoPoder.getNombre() */);
-	}
+// 	private void transformacionKorby(PoderDittu nuevoPoder){
+// 		Dittu = nuevoPoder;
+// 		System.out.println ("Korby replica la habilidad de "  /* nuevoPoder.getNombre() */);
+// 	}
 
 
-	/* public String mostrarAnimal(){
-		return ditto.mostrarInformacion();
-	}
- */
-    public String mostrarAtaqueKorby(){
-        return Korby.ataque();
-    }
-	public String mostrarAtaqueMegaman(){
-        return Megaman.ataque();
-    }
-	public String mostrarAtaqueDittu(){
-        return Dittu.ataque();
-    }
+// 	/* public String mostrarAnimal(){
+// 		return ditto.mostrarInformacion();
+// 	}
+//  */
+    
+// 	public String mostrarAtaqueMegaman(){
+//         return Megaman.ataque();
+//     }
+// 	public String mostrarAtaqueDittu(){
+//         return Dittu.ataque();
+//     }
+
+	
+// 	public String mostrarDefensaMegaman(){
+//         return Megaman.defensa();
+//     }
+// 	public String mostrarDefensaDittu(){
+//         return Dittu.defensa();
+//     }
+
 	public static void main(String[] args){
+		Korby Korby = new Korby();
 		Combate zoo = new Combate();
 		Scanner sc = new Scanner(System.in);
 		int opcion;
 		System.out.println ("Empieza el combate!!");
 		System.out.println ("KIrby golpea Megaman con su ataque electrico");
-		zoo.transformacionKorby(new Accho());
-		System.out.println (zoo.mostrarAtaqueKorby());
+		System.out.println("Korby agarra un objeto de habilidad");
+		Korby.habilidad();
+		// Korby.transformacionKorby(new Accho());
+		System.out.println (Korby.mostrarAtaqueKorby());
 
 
 		/* System.out.println("***BIENVENIDO AL ZOOLOGICO CHEEMS.***");
