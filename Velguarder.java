@@ -1,7 +1,7 @@
 public class Velguarder implements PoderMegaman{
 	private String nombre = "Velguarder";
 	private String frase = "Absorbe el miedo que tenga su oponente y ataca con sus garras de hierro a este. Quita al enemigo 32 HP.";
-	private String getNombre(){
+	public String getNombre(){
 		return nombre;
 	}
 
@@ -16,3 +16,4 @@ public class Velguarder implements PoderMegaman{
 				"Megaman" + " " +
 				frase + "\n" ;				
 	}
+}

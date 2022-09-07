@@ -1,7 +1,7 @@
 public class LaunchOctopus implements PoderMegaman{
 	private String nombre = "Launch Octopus";
 	private String frase = "Los tentáculos de Octopus absorben la energía del usuario. Infringe 30 HP al contrincante.";
-	private String getNombre(){
+	public String getNombre(){
 		return nombre;
 	}
 
@@ -16,3 +16,4 @@ public class LaunchOctopus implements PoderMegaman{
 				"Megaman" + " " +
 				frase + "\n" ;				
 	}
+}

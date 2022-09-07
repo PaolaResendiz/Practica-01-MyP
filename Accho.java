@@ -1,7 +1,8 @@
 public class Accho implements PoderKorby{
 	private String nombre = "accho";
 	private String frase = "lanza una llama de fuego y quita al contrincante 23 HP";
-	private String getNombre(){
+	
+	public String getNombre(){
 		return nombre;
 	}
 

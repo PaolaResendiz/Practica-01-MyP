@@ -1,7 +1,7 @@
 public class AlbertoWilly implements PoderMegaman{
 	private String nombre = "Alberto Willy";
 	private String frase = "Recupera energía oscura para potenciar a uno de sus robots. Quita al enemigo 40 HP";
-	private String getNombre(){
+	public String getNombre(){
 		return nombre;
 	}
 
@@ -16,3 +16,4 @@ public class AlbertoWilly implements PoderMegaman{
 				"Megaman" + " " +
 				frase + "\n" ;				
 	}
+}

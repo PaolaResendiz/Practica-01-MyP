@@ -4,7 +4,7 @@ public class Korby {
     private int HP;
     public void transformacionKorby(PoderKorby nuevoPoder){
 		Korby = nuevoPoder;
-		System.out.println ("Korby replica la habilidad de "  /* nuevoPoder.getNombre() */);
+		System.out.println ("Korby replica la habilidad de "+   Korby.getNombre());
 	}
 
     public String mostrarAtaqueKorby(){
@@ -28,6 +28,22 @@ public class Korby {
 
     public String mostrarDefensaKorby(){
         return Korby.defensa();
+    }
+
+    public PoderKorby getPoder(){
+        return Korby;
+    }
+
+    public void setPoder(PoderKorby nuevoPoder){
+        Korby = nuevoPoder;
+    }
+
+    public int getHP(){
+        return HP;
+    }
+
+    public void setHP(int nuevoHP){
+        HP = nuevoHP;
     }
 }
 
