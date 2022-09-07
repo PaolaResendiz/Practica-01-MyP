@@ -9,6 +9,7 @@ public class Accho implements PoderKorby{
 	public String defensa(){
 		return "";
 	}
+	//sad
 	@Override
 	public String ataque(){
 		return 
