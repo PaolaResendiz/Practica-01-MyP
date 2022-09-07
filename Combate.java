@@ -3,14 +3,24 @@ import java.util.Scanner;
 public class Combate{
 
 	/* Objeto de contexto. */
-	private Poder Korby;
-    private Poder Megaman;
-	private Poder Dittu;
-	private void transformacionKorby(Poder nuevoPoder){
+	private PoderKorby Korby;
+    private PoderMegaman Megaman;
+	private PoderDittu Dittu;
+	
+	private void transformacionKorby(PoderKorby nuevoPoder){
 		Korby = nuevoPoder;
 		System.out.println ("Korby replica la habilidad de "  /* nuevoPoder.getNombre() */);
 	}
 
+	private void transformacionMegaman(PoderMegaman nuevoPoder){
+		Megaman = nuevoPoder;
+		System.out.println ("Korby replica la habilidad de "  /* nuevoPoder.getNombre() */);
+	}
+
+	private void transformacionKorby(PoderDittu nuevoPoder){
+		Dittu = nuevoPoder;
+		System.out.println ("Korby replica la habilidad de "  /* nuevoPoder.getNombre() */);
+	}
 
 
 	/* public String mostrarAnimal(){
@@ -19,6 +29,12 @@ public class Combate{
  */
     public String mostrarAtaqueKorby(){
         return Korby.ataque();
+    }
+	public String mostrarAtaqueMegaman(){
+        return Megaman.ataque();
+    }
+	public String mostrarAtaqueDittu(){
+        return Dittu.ataque();
     }
 	public static void main(String[] args){
 		Combate zoo = new Combate();
