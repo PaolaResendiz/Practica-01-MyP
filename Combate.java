@@ -56,7 +56,7 @@ public class Combate{
 		String frase1 = "Kirby golpea Megaman con su ataque electrico";
 		System.out.println (frase1);
 		// uts.LeerString("jugador1.txt");
-      String ps = uts.LeerString("jugador1.txt") + frase1;
+      String ps = uts.LeerString("jugador1.txt") + "\n" + frase1;
 	  System.out.println(ps);
       utr.EscribirString("jugador1.txt",ps);
 
