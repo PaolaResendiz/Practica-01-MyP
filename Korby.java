@@ -4,7 +4,7 @@ public class Korby {
     private int HP;
     public void transformacionKorby(PoderKorby nuevoPoder){
 		Korby = nuevoPoder;
-		System.out.println ("Korby replica la habilidad de "+   Korby.getNombre());
+		System.out.println ("Korby replica la habilidad de "+  Korby.getNombre());
 	}
 
     public String mostrarAtaqueKorby(){
@@ -13,6 +13,7 @@ public class Korby {
 
     public void habilidad(){
         int randomNum = 1 + (int)(Math.random() * 3);
+        System.out.println(randomNum);
         switch(randomNum){
             case 1:
             transformacionKorby(new Accho());

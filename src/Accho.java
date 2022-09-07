@@ -1,6 +1,7 @@
-public class Ninjako implements PoderKorby{
-	private String nombre = "Ninjako";
-	private String frase = "Golpea mas fuerte y rápido a su enemigo. Quita al contrincante 41 HP ";
+package src;
+public class Accho implements PoderKorby{
+	private String nombre = "accho";
+	private String frase = "lanza una llama de fuego y quita al contrincante 23 HP";
 	
 	public String getNombre(){
 		return nombre;
@@ -10,12 +11,12 @@ public class Ninjako implements PoderKorby{
 	public String defensa(){
 		return "";
 	}
+	//sadasdssad
 	@Override
 	public String ataque(){
 		return 
 				"Korby" + " " +
-				frase;
-				
+				frase + "\n" ;				
 	}
 
 	/* public static void main(String[] args){
