@@ -1,10 +1,16 @@
 import java.util.Random;
 public class Korby {
-    public PoderKorby Korby;
+    private String [] ps = new String[0];
+    private UtilidadesS uts = new UtilidadesS();
+    private PoderKorby Korby;
     private int HP;
     public void transformacionKorby(PoderKorby nuevoPoder){
 		Korby = nuevoPoder;
-		System.out.println ("Korby replica la habilidad de "+  Korby.getNombre());
+        String frase = "Korby replica la habilidad de "+  Korby.getNombre();
+		System.out.println (frase);
+    //     uts.leerObjetosArchivo("jugador1.txt");
+    //   ps = uts.agregarAArregloString(frase);
+    //   uts.EscribirObjetosArchivo("jugador1.txt",ps);
 	}
 
     public String mostrarAtaqueKorby(){
@@ -46,5 +52,6 @@ public class Korby {
     public void setHP(int nuevoHP){
         HP = nuevoHP;
     }
+    
 }
 

@@ -42,29 +42,38 @@ public class Combate{
 //     }
 
 	public static void main(String[] args){
+		LeerSt uts = new LeerSt();
+		EscribirTexto utr = new EscribirTexto();
 		Korby Korby = new Korby();
 		Combate zoo = new Combate();
 		Scanner sc = new Scanner(System.in);
 		int opcion;
+		System.out.println ("Bienvenido al combate, los  competidores de este sion: /n" + 
+        "1. Korby"+
+        "2. Megaman"+
+        "3. Dittu");
 		System.out.println ("Empieza el combate!!");
-		System.out.println ("KIrby golpea Megaman con su ataque electrico");
+		String frase1 = "Kirby golpea Megaman con su ataque electrico";
+		System.out.println (frase1);
+		// uts.LeerString("jugador1.txt");
+      String ps = uts.LeerString("jugador1.txt") + frase1;
+	  System.out.println(ps);
+      utr.EscribirString("jugador1.txt",ps);
+
+
 		System.out.println("Korby agarra un objeto de habilidad");
 		Korby.habilidad();
 		// Korby.transformacionKorby(new Accho());
 		System.out.println (Korby.mostrarAtaqueKorby());
-
+		
 
 		/* System.out.println("***BIENVENIDO AL ZOOLOGICO CHEEMS.***");
 
 		do{
-			System.out.println("Ingrese una de las siguientes " + 
-				"opciones para mostrar al animal:\n" + 
-				"1.- Oso.\n" +
-				"2.- Flamenco.\n" + 
-				"3.- Cocodrilo.\n" + 
-				"4.- Rana.\n" +
-				"5.- Elefante.\n" +
-				"0.- Salir\n");
+			System.out.println ("Ingrese la opción del competidor al que desea apoyar " + "opciones para mostrar al competidor:\n" + 
+        "1. Korby"+
+        "2. Megaman"+
+        "3. Dittu");
 				
 				
 
@@ -75,12 +84,9 @@ public class Combate{
 						break;
 					}catch (NumberFormatException ex){
 						System.out.println("Ingresa un numero valido.\n" + 
-							"1.- Oso.\n" +
-							"2.- Flamenco.\n" + 
-							"3.- Cocodrilo.\n" + 
-							"4.- Rana.\n" +
-							"5.- Elefante.\n" +
-							"0.- Salir\n");
+        "1. Korby"+
+        "2. Megaman"+
+        "3. Dittu");
 					}
 				}
 
