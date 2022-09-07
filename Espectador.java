@@ -6,12 +6,12 @@ public class Espectador implements Observador{
 	public Espectador(String usuario, Stream lider){
 		this.lider = lider;
 		lider.registrar(this);
-		notificacion = lider.getnotificacion();
+		notificacion = lider.getNotificacion();
 	}
 	
 	@Override
 	public void actualizar(){
-		notificacion = lider.getnotificacion();
+		notificacion = lider.getNotificacion();
 		vernotificacion();
 	}
 
@@ -24,9 +24,7 @@ public class Espectador implements Observador{
 	}
 
 	public void vernotificacion(){
-		System.out.println("FAMILIA: " + familia 
-			+ "\nCASA: " + id_Casa
-			+ "\nEl lider ha publicado las notificacions del dia: \n" 
+		System.out.println("Notificacion"
 			+ notificacion);
 	}
 }

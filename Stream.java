@@ -1,45 +1,39 @@
 import java.util.LinkedList;
 
-public class CheemsDistopico implements Sujeto{
+public class Stream implements Sujeto{
 
-	LinkedList<CasaCiudadano> casasCiudadanos = new LinkedList<CasaCiudadano>();
-	String noticia;
+	LinkedList<Espectador> Espectadores = new LinkedList<Espectador>();
+	String notificacion;
 
-	public LinkedList<CasaCiudadano> getCasasCiudadanos(){
-		return casasCiudadanos;
+	public LinkedList<Espectador> getEspectadores(){
+		return Espectadores;
 	}
 
-	public String getNoticia(){
-		return noticia;
+	public String getNotificacion(){
+		return notificacion;
 	}
 
-	public void setNoticia(String nuevaNoticia){
-		noticia = nuevaNoticia;
+	public void setnotificacion(String nuevanotificacion){
+		notificacion = nuevanotificacion;
 	}
 
-	public void registrar(CasaCiudadano c){
-		casasCiudadanos.add(c);
+	public void registrar(Espectador c){
+		Espectadores.add(c);
 		System.out.println("****************************************************************"
-			+ "\nLIDER, la casa " + c.getId_Casa() 
-			+ " ha sido ocupada por la familia " + c.getFamilia() + "\n"
+			+ "\nSe ha registrado al Espectador " + c.getUsuario() 
 			+ "****************************************************************");
 	}
 
-	public void remover(CasaCiudadano c){
-		System.out.println("\n****************************************************************************"
-			+ "\nLIDER, la familia " + c.getFamilia() 
-			+ " de la casa " + c.getId_Casa() 
-			+ " ha sido capturada por traicion.\n"
-			+ "****************************************************************************");
-		casasCiudadanos.remove(c);
+	public void remover(Espectador c){
+		System.out.println("****************************************************************"
+			+ "\nSe ha removido al Espectador " + c.getUsuario() 
+			+ "****************************************************************");
+		Espectadores.remove(c);
 	}
 	
 	public void notificar(){
-		if(casasCiudadanos.size() > 0){
-			System.out.println("****************************************"
-				+ "\n********Pantallas de ciudadanos.********\n"
-				+ "****************************************");
-			for(CasaCiudadano c : casasCiudadanos){
+		if(Espectadores.size() > 0){
+			for(Espectador c : Espectadores){
 				c.actualizar();
 			}
 		}
