@@ -1,33 +1,35 @@
+import java.util.Random;
 public class Dittu {
-    private int HP; 
-    private PoderDittu Dittu;
+    public PoderDittu Dittu;
+    private int HP;
     public void transformacionDittu(PoderDittu nuevoPoder){
 		Dittu = nuevoPoder;
-		System.out.println ("Dittu replica la habilidad de "  /* nuevoPoder.getNombre() */);
+		System.out.println ("Dittu replica la habilidad de "+  Dittu.getNombre());
 	}
 
     public String mostrarAtaqueDittu(){
         return Dittu.ataque();
     }
 
+    public void habilidad(){
+        int randomNum = 1 + (int)(Math.random() * 3);
+        System.out.println(randomNum);
+        switch(randomNum){
+            case 1:
+            transformacionDittu(new Metapod());
+            break;
+            case 2: 
+            transformacionDittu(new Mimikay());
+            break;
+            case 3:
+            transformacionDittu(new Suicune());
+            break;
+        }
+    }
+
     public String mostrarDefensaDittu(){
         return Dittu.defensa();
     }
-
-    // public void habilidad(){
-    //     int randomNum = 1 + (int)(Math.random() * 3);
-    //     switch(randomNum){
-    //         case 1:
-    //         transformacionDittu(new Accho());
-    //         break;
-    //         case 2: 
-    //         transformacionDittu(new Bobblehead());
-    //         break;
-    //         case 3:
-    //         transformacionDittu(new Ninjako());
-    //         break;
-    //     }
-    // }
 
     public PoderDittu getPoder(){
         return Dittu;
@@ -44,6 +46,5 @@ public class Dittu {
     public void setHP(int nuevoHP){
         HP = nuevoHP;
     }
-
-
 }
+
