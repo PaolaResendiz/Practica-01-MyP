@@ -17,4 +17,8 @@ public class Dittu {
     public PoderDittu getPoder(){
         return Dittu;
     }
+
+    public void setPoder(PoderDittu nuevoPoder){
+        Dittu = nuevoPoder;
+    }
 }
