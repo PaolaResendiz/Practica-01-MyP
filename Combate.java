@@ -36,6 +36,17 @@ public class Combate{
 	public String mostrarAtaqueDittu(){
         return Dittu.ataque();
     }
+
+	public String mostrarDefensaKorby(){
+        return Korby.defensa();
+    }
+	public String mostrarDefensaMegaman(){
+        return Megaman.defensa();
+    }
+	public String mostrarDefensaDittu(){
+        return Dittu.defensa();
+    }
+	
 	public static void main(String[] args){
 		Combate zoo = new Combate();
 		Scanner sc = new Scanner(System.in);
