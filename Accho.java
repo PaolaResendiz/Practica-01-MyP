@@ -8,14 +8,14 @@ public class Accho implements PoderKorby{
 	/* Metodo que regresa el nombre del poder 
 	 * @return nombre
 	 */
-	public String getNombre(){
+	public String mostrarNombre(){
 		return nombre;
 	}
 
 	/* Metodo que regresa la defensa del poder 
 	 * @return defensa
 	 */
-	public double getDefensa(){
+	public double mostrarDefensa(){
 		return defensa;
 	}
 
@@ -59,7 +59,7 @@ public class Accho implements PoderKorby{
 	/*Método que realisa la defensa segun el poder */
 	@Override
 	public String defensa(){
-		return "Korby se defiende con un escudo de fuego, defiende 50% de daño";
+		return "Korby se defiende con un escudo de fuego defiende 50% de damage";
 	}
 
 	/*
@@ -71,10 +71,10 @@ public class Accho implements PoderKorby{
 	public String ataqueMegaman(Megaman enemigo){
 		PoderMegaman poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
-			enemigo.setHP(enemigo.getHP() - (damage/2));
+			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
-			frase +  " Megaman " + damage/2 + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
+			frase +  " Megaman " + damage*poder.mostrarDefensa() + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
 		}else{
 				enemigo.setHP(enemigo.getHP() - damage);
 				return
@@ -83,18 +83,18 @@ public class Accho implements PoderKorby{
 				
     }
        
-	
 	/* Método que realiza el ataque a Dittu
 	 * @param enemigo Dittu
 	 * @return frase con el ataque
 	 */
 	@Override	
 	public String ataqueDittu(Dittu enemigo){
+		PoderDittu poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
-			enemigo.setHP(enemigo.getHP() - (damage/2));
+			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
-			frase +  " Dittu " + damage/2 + " HP" + "\nEl HP de Dittu es " + enemigo.getHP();
+			frase +  " Dittu " + damage*poder.mostrarDefensa() + " HP" + "\nEl HP de Dittu es " + enemigo.getHP();
 		}else{
 				enemigo.setHP(enemigo.getHP() - damage);
 				return

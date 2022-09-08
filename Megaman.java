@@ -1,18 +1,18 @@
 public class Megaman {
     private PoderMegaman Poder;
     private boolean defendido;
-    public String fraseAtaque  = " Korby lanza un ataque eléctrico a ";
+    public String fraseAtaque  = " Megaman lanza un ataque de energia con su espada y quita al contrincante ";
     private int HP= 150;
     private void transformacionMegaman(PoderMegaman nuevoPoder){
 		Poder = nuevoPoder;
-		System.out.println ("Megaman replica la habilidad de "  + nuevoPoder.getNombre());
+		System.out.println ("Megaman replica la habilidad de "  + nuevoPoder.mostrarNombre());
 	}
 
     public String ataqueKorby(Korby enemigo){
         if(Poder==null){
             enemigo.setHP(enemigo.getHP() - 40);
             return 
-                    fraseAtaque +  " Korby " + " ";
+                    fraseAtaque +  " Korby " + "40 HP";
         }else{
             return Poder.ataqueKorby(enemigo);
         }
@@ -24,7 +24,7 @@ public class Megaman {
         if(Poder==null){
         enemigo.setHP(enemigo.getHP() - 40);
         return 
-                fraseAtaque +  " Dittu " + " ";
+                fraseAtaque +  " Dittu " + "40 HP";
         }else{
             return Poder.ataqueDittu(enemigo);
         }
@@ -46,6 +46,9 @@ public class Megaman {
     }
 
     public String Defensa(){
+        if(Poder==null){
+            return "Megaman se defiende";
+        }
         defendido = true;
         return Poder.defensa();
         

@@ -3,5 +3,5 @@ public interface PoderMegaman{
 	public String ataqueDittu(Dittu enemigo);
 	public String defensa();
 	public String mostrarNombre();
-	public String mostrarDefensa();
+	public double mostrarDefensa();
 }

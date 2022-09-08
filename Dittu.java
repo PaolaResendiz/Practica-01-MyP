@@ -4,15 +4,12 @@ public class Dittu {
     private UtilidadesS uts = new UtilidadesS();
     private PoderDittu Poder;
     private boolean defendido;
-    public String fraseAtaque  = " Dittu lanza un ataque eléctrico a ";
+    public String fraseAtaque  = " Dittu lanza un ataque gelatinoso y quita a su contrincante ";
     private int HP = 150;
     public void transformacionDittu(PoderDittu nuevoPoder){
 		Poder = nuevoPoder;
-        String frase = "Dittu replica la habilidad de "+  Poder.getNombre();
+        String frase = "Dittu replica la habilidad de "+  Poder.mostrarNombre();
 		System.out.println (frase);
-    //     uts.leerObjetosArchivo("jugador1.txt");
-    //   ps = uts.agregarAArregloString(frase);
-    //   uts.EscribirObjetosArchivo("jugador1.txt",ps);
 	}
 
 
@@ -20,7 +17,7 @@ public class Dittu {
         if(Poder==null){
             enemigo.setHP(enemigo.getHP() - 40);
             return 
-                    fraseAtaque +  " Megaman " + " ";
+                    fraseAtaque +  " Megaman " + "40 HP";
         }else{
             return Poder.ataqueMegaman(enemigo);
         }
@@ -32,7 +29,7 @@ public class Dittu {
         if(Poder==null){
         enemigo.setHP(enemigo.getHP() - 40);
         return 
-                fraseAtaque +  " Dittu " + " ";
+                fraseAtaque +  " Korby " + "40 HP";
         }else{
             return Poder.ataqueKorby(enemigo);
         }
@@ -56,6 +53,9 @@ public class Dittu {
 
     public String Defensa(){
         defendido = true;
+        if(Poder==null){
+            return "Dittu se defiende";
+        }
         return Poder.defensa();
         
     }

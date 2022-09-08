@@ -75,22 +75,28 @@ public class Combate{
 		Espectador espectador2 = new Espectador("Usuario2", stream);
 		Espectador espectador3 = new Espectador("Usuario3", stream);
 		Espectador espectador4 = new Espectador("Usuario4", stream);
-		System.out.println ("Bienvenido al combate, los  competidores de este sion: /n" + 
+		System.out.println ("Bienvenido al combate, los  competidores de este torneo son: \n" + 
         "1. Korby"+
-        "2. Megaman"+
-        "3. Dittu");
+        "\n2. Megaman"+
+        "\n3. Dittu");
 		System.out.println ("Empieza el combate!!");
 		String frase1 = Korby.ataqueMegaman(Megaman);
 		System.out.println (frase1);
 		stream.setnotificacion(frase1);
 		stream.notificar();
-		// Megaman.setHP(Megaman.getHP() - 54);
-		System.out.println ("Megaman tiene " + Megaman.getHP() + " HP");
-		String frase2 = "Megaman golpea a Korby con su espada de energía, quita al contrincante 32 HP";
-		// uts.LeerString("jugador1.txt");
+		String frase2 = Megaman.ataqueKorby(Korby);
 		System.out.println (frase2);
 		stream.setnotificacion(frase2);
 		stream.notificar();
+		String frase3 = Korby.ataqueDittu(Dittu);
+		System.out.println (frase3);
+		stream.setnotificacion(frase3);
+		stream.notificar();
+		String frase4 = Dittu.ataqueKorby(Korby);
+		System.out.println (frase4);
+		stream.setnotificacion(frase4);
+		stream.notificar();
+		System.out.println(Korby.getHP() + " " + Megaman.getHP() + " " + Dittu.getHP()); 
 
       
 

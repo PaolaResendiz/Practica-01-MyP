@@ -4,11 +4,11 @@ public class Korby {
     private UtilidadesS uts = new UtilidadesS();
     private PoderKorby Poder;
     private boolean defendido;
-    public String fraseAtaque  = " Korby lanza un ataque eléctrico a ";
+    public String fraseAtaque  = " Korby lanza un ataque eléctrico y quita a ";
     private int HP = 150;
     public void transformacionKorby(PoderKorby nuevoPoder){
 		Poder = nuevoPoder;
-        String frase = "Korby replica la habilidad de "+  Poder.getNombre();
+        String frase = "Korby replica la habilidad de "+  mostrarNombre();
 		System.out.println (frase);
     //     uts.leerObjetosArchivo("jugador1.txt");
     //   ps = uts.agregarAArregloString(frase);
@@ -20,7 +20,7 @@ public class Korby {
         if(Poder==null){
             enemigo.setHP(enemigo.getHP() - 40);
             return 
-                    fraseAtaque +  " Megaman " + " ";
+                    fraseAtaque +  " Megaman " + "40 HP ";
         }else{
             return Poder.ataqueMegaman(enemigo);
         }
@@ -32,7 +32,7 @@ public class Korby {
         if(Poder==null){
         enemigo.setHP(enemigo.getHP() - 40);
         return 
-                fraseAtaque +  " Dittu " + " ";
+                fraseAtaque +  " Dittu " + "40 HP";
         }else{
             return Poder.ataqueDittu(enemigo);
         }
@@ -56,12 +56,19 @@ public class Korby {
 
     public String Defensa(){
         defendido = true;
+        if(Poder==null){
+            return "Korby se defiende";
+        }
         return Poder.defensa();
         
     }
 
     public PoderKorby getPoder(){
         return Poder;
+    }
+
+    public String mostrarNombre(){
+        return Poder.mostrarNombre();
     }
 
     public void setPoder(PoderKorby nuevoPoder){

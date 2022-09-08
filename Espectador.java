@@ -16,7 +16,7 @@ public class Espectador implements Observador{
 		EscribirTexto utr = new EscribirTexto();
 		notificacion = lider.getNotificacion();
 		String ps = uts.LeerString("jugador1.txt") + "\n" + notificacion;
-	  System.out.println(ps);
+		// System.out.println(ps);
       utr.EscribirString("jugador1.txt",ps);
 	}
 

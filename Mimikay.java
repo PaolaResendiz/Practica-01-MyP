@@ -1,20 +1,21 @@
 public class Mimikay implements PoderDittu{
 	private String nombre = "Mimikay";
 	private String frase = "De las sombras puede crear unas manos las cuales te arañan y quita al contrincante 20 HP";
-	private int damage = 45;
+	
+	private int damage = 60;
 	private double defensa= 0.5;
 	
 	/* Metodo que regresa el nombre del poder 
 	 * @return nombre
 	 */
-	public String getNombre(){
+	public String mostrarNombre(){
 		return nombre;
 	}
 
 	/* Metodo que regresa la defensa del poder 
 	 * @return defensa
 	 */
-	public double getDefensa(){
+	public double mostrarDefensa(){
 		return defensa;
 	}
 
@@ -58,45 +59,46 @@ public class Mimikay implements PoderDittu{
 	/*Método que realisa la defensa segun el poder */
 	@Override
 	public String defensa(){
-		return "Korby se defiende con un escudo de fuego, defiende 50% de daño";
+		return "Dittu se convierte una sombra y se esfuma, defiende 50% de damage";
 	}
 
 	/*
 	 * Método que realiza el ataque a Megaman
-	 * @param enemigo Megaman
+	 * @param enemigo Korby
 	 * @return frase con el ataque
 	 */
 	@Override
-	public String ataqueMegaman(Megaman enemigo){
-		PoderMegaman poder = enemigo.getPoder();
+	public String ataqueKorby(Korby enemigo){
+		PoderKorby poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
-			enemigo.setHP(enemigo.getHP() - (damage/2));
+			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
-			frase +  " Megaman " + damage/2 + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
+			frase +  " Korby " + damage*poder.mostrarDefensa() + " HP" + "\nEl HP de Korby es " + enemigo.getHP();
 		}else{
 				enemigo.setHP(enemigo.getHP() - damage);
 				return
-				frase +  " Megaman " + damage + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
+				frase +  " Korby " + damage + " HP" + "\nEl HP de Korby es " + enemigo.getHP();
 			}
 				
     }
        
 	/* Método que realiza el ataque a Dittu
-	 * @param enemigo Dittu
+	 * @param enemigo Megaman
 	 * @return frase con el ataque
 	 */
 	@Override	
-	public String ataqueDittu(Dittu enemigo){
+	public String ataqueMegaman(Megaman enemigo){
+		PoderMegaman poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
-			enemigo.setHP(enemigo.getHP() - (damage/2));
+			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
-			frase +  " Dittu " + damage/2 + " HP" + "\nEl HP de Dittu es " + enemigo.getHP();
+			frase +  " Megaman " + damage*poder.mostrarDefensa() + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
 		}else{
 				enemigo.setHP(enemigo.getHP() - damage);
 				return
-				frase +  " Dittu " + damage + " HP" + "\nEl HP de Dittu es " + enemigo.getHP();
+				frase +  " Megaman " + damage + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
 			}
 				
     }
