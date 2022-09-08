@@ -6,10 +6,10 @@ public class Dittu {
     private boolean defendido;
     public String fraseAtaque  = " Dittu lanza un ataque gelatinoso y quita a su contrincante ";
     private int HP = 150;
-    public void transformacionDittu(PoderDittu nuevoPoder){
+    public String transformacionDittu(PoderDittu nuevoPoder){
 		Poder = nuevoPoder;
         String frase = "Dittu replica la habilidad de "+  Poder.mostrarNombre();
-		System.out.println (frase);
+		return frase;
 	}
 
 
@@ -35,19 +35,19 @@ public class Dittu {
         }
     }
 
-    public void habilidad(){
+    public String habilidad(){
         int randomNum = 1 + (int)(Math.random() * 3);
         switch(randomNum){
             case 1:
-            transformacionDittu(new Metapod());
-            break;
+            return transformacionDittu(new Metapod());
+      
             case 2: 
-            transformacionDittu(new Mimikay());
-            break;
+            return transformacionDittu(new Mimikay());
+ 
             case 3:
-            transformacionDittu(new Suicune());
-            break;
+            return transformacionDittu(new Suicune());
         }
+        return "";
     }
 
     public String Defensa(){

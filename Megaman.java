@@ -3,9 +3,10 @@ public class Megaman {
     private boolean defendido;
     public String fraseAtaque  = " Megaman lanza un ataque de energia con su espada y quita al contrincante ";
     private int HP= 150;
-    private void transformacionMegaman(PoderMegaman nuevoPoder){
+    private String transformacionMegaman(PoderMegaman nuevoPoder){
 		Poder = nuevoPoder;
-		System.out.println ("Megaman replica la habilidad de "  + nuevoPoder.mostrarNombre());
+		String cadena = "Megaman replica la habilidad de "  + nuevoPoder.mostrarNombre();
+        return cadena;
 	}
 
     public String ataqueKorby(Korby enemigo){
@@ -30,19 +31,20 @@ public class Megaman {
         }
     }
     
-    public void habilidad(){
+    public String habilidad(){
         int randomNum = 1 + (int)(Math.random() * 3);
         switch(randomNum){
             case 1:
-            transformacionMegaman(new Velguarder());
-            break;
+            return transformacionMegaman(new Velguarder());
+       
             case 2: 
-            transformacionMegaman(new AlbertoWilly());
-            break;
+            return transformacionMegaman(new AlbertoWilly());
+      
             case 3:
-            transformacionMegaman(new LaunchOctopus());
-            break;
+            return transformacionMegaman(new LaunchOctopus());
+            
         }
+        return "";
     }
 
     public String Defensa(){

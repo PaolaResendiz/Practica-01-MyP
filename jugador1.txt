@@ -1,17 +1,20 @@
 Bienvendio jugador 1
- Korby lanza un ataque eléctrico y quita a  Megaman 40 HP 
- Korby lanza un ataque eléctrico y quita a  Dittu 40 HP
-Korby golpea mas fuerte y rápido a su enemigo. Quita al contrincante  Megaman 20 HP
-El HP de Megaman es 90
- Dittu lanza un ataque gelatinoso y quita a su contrincante  Megaman 40 HP
-Los tentaculos de Megaman absorben la energía del usuario. Infringe al contrincante  Dittu 42.0 HP
-El HP de Dittu es 62
-Ditto utiliza unos colmillos que al morder convierte en hielo al contrincante. Quita al contrincante Korby 45 HP
-El HP de Korby es 105
-Ditto utiliza unos colmillos que al morder convierte en hielo al contrincante. Quita al contrincante Megaman 45 HP
-El HP de Megaman es 5
+ Megaman lanza un ataque de energia con su espada y quita al contrincante  Dittu 40 HP
+Megaman replica la habilidad de Alberto Willy
+Korby se defiende
+Korby replica la habilidad de Bobblehead
+Megaman recupera energía oscura para potenciar a uno de sus robots. Quita al enemigo Korby 14.0 HP
+El HP de Korby es 136
+Megaman replica la habilidad de Launch Octopus
 Los tentaculos de Megaman absorben la energía del usuario. Infringe al contrincante  Dittu 60 HP
-El HP de Dittu es 2
-Los tentaculos de Megaman absorben la energía del usuario. Infringe al contrincante  Korby 60 HP
-El HP de Korby es 45
+El HP de Dittu es 50
+Dittu se endurece rápidamente, defiende 60% de damage
+Korby lanza burbujas con acido. Quita al contrincante  Dittu 24.0 HP
+El HP de Dittu es 26
+Dittu utiliza un ataque basico y quita al contrincante  Korby 20 HP
+El HP de Korby es 116
+Korby lanza burbujas con acido. Quita al contrincante  Megaman 60 HP
+El HP de Megaman es 90
+Korby lanza burbujas con acido. Quita al contrincante  Dittu 60 HP
+El HP de Dittu es -34
 Gana Korby

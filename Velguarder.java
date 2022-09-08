@@ -96,9 +96,7 @@ public class Velguarder implements PoderMegaman{
 	 */
 	@Override	
 	public String ataqueDittu(Dittu enemigo){
-		System.out.println(enemigo);
 		PoderDittu poder = enemigo.getPoder();
-		System.out.println(poder);
 		if(enemigo.getDefendido()){
 			if(poder == null){
 				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));

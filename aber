@@ -1,0 +1,82 @@
+System.out.println ("Empieza el combate!!");
+String frase1 = Megaman.ataqueKorby(Korby);
+System.out.println (frase1);
+stream.setnotificacion(frase1);
+stream.notificar();
+String frase2 = Megaman.habilidad();
+System.out.println (frase2);
+stream.setnotificacion(frase2);
+stream.notificar();
+String frase3 = Dittu.Defensa();
+System.out.println (frase3);
+stream.setnotificacion(frase3);
+stream.notificar();
+String frase4 = Dittu.habilidad();
+System.out.println (frase4);
+stream.setnotificacion(frase4);
+stream.notificar();
+
+String frase5=  Megaman.ataqueDittu(Dittu);
+System.out.println (frase5);
+stream.setnotificacion(frase5);
+stream.notificar();
+combate.verificarGanador(Megaman, Korby, Dittu, stream);
+
+String frase6 = Megaman.habilidad();
+System.out.println (frase6);
+stream.setnotificacion(frase6);
+stream.notificar();
+
+String frase7 = Megaman.ataqueKorby(Korby);
+System.out.println (frase7);
+stream.setnotificacion(frase7);
+stream.notificar();
+combate.verificarGanador(Megaman, Korby, Dittu, stream);
+
+Korby.habilidad();
+
+String frase8 = Korby.Defensa();
+System.out.println (frase8);
+stream.setnotificacion(frase8);
+stream.notificar();
+
+String frase9 = Dittu.ataqueKorby(Korby);
+System.out.println (frase9);
+stream.setnotificacion(frase9);
+stream.notificar();
+combate.verificarGanador(Megaman, Korby, Dittu, stream);
+System.out.println(Megaman.getHP() + " " + Korby.getHP() + " " + Dittu.getHP()); 
+
+String frase10= Korby.ataqueDittu(Dittu);
+System.out.println (frase10);
+stream.setnotificacion(frase10);
+stream.notificar();
+combate.verificarGanador(Megaman, Korby, Dittu, stream);
+
+String frase11 = Dittu.ataqueMegaman(Megaman);
+System.out.println (frase11);
+stream.setnotificacion(frase11);
+stream.notificar();
+combate.verificarGanador(Megaman, Korby, Dittu, stream);
+
+String frase12 = Dittu.ataqueKorby(Korby);
+System.out.println (frase12);
+stream.setnotificacion(frase12);
+stream.notificar();
+String frase13= Korby.ataqueDittu(Dittu);
+combate.verificarGanador(Megaman, Korby, Dittu, stream);
+System.out.println (frase13);
+stream.setnotificacion(frase13);
+stream.notificar();
+combate.verificarGanador(Megaman, Korby, Dittu, stream);
+
+String frase14= Korby.ataqueMegaman(Megaman);
+System.out.println (frase14);
+stream.setnotificacion(frase14);
+stream.notificar();
+combate.verificarGanador(Megaman, Korby, Dittu, stream);
+String frase15= Megaman.ataqueKorby(Korby);
+System.out.println (frase15);
+stream.setnotificacion(frase15);
+stream.notificar();
+combate.verificarGanador(Megaman, Korby, Dittu, stream);

@@ -6,10 +6,10 @@ public class Korby {
     private boolean defendido;
     public String fraseAtaque  = " Korby lanza un ataque eléctrico y quita a ";
     private int HP = 150;
-    public void transformacionKorby(PoderKorby nuevoPoder){
+    public String transformacionKorby(PoderKorby nuevoPoder){
 		Poder = nuevoPoder;
         String frase = "Korby replica la habilidad de "+  mostrarNombre();
-		System.out.println (frase);
+		return frase;
     //     uts.leerObjetosArchivo("jugador1.txt");
     //   ps = uts.agregarAArregloString(frase);
     //   uts.EscribirObjetosArchivo("jugador1.txt",ps);
@@ -38,20 +38,21 @@ public class Korby {
         }
     }
 
-    public void habilidad(){
+    public String habilidad(){
         int randomNum = 1 + (int)(Math.random() * 3);
-        switch(randomNum){
-            case 1:
-            transformacionKorby(new Accho());
-            break;
-            case 2: 
-            transformacionKorby(new Bobblehead());
-            break;
-            case 3:
-            transformacionKorby(new Ninjako());
-            break;
+
+            switch(randomNum){
+                case 1:
+                return transformacionKorby(new Accho());
+          
+                case 2: 
+                return transformacionKorby(new Bobblehead());
+     
+                case 3:
+                return transformacionKorby(new Ninjako());
+            }
+            return "";
         }
-    }
 
     public String Defensa(){
         defendido = true;
