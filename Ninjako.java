@@ -1,25 +1,103 @@
 public class Ninjako implements PoderKorby{
 	private String nombre = "Ninjako";
 	private String frase = "Golpea mas fuerte y rápido a su enemigo. Quita al contrincante 41 HP ";
+	private int damage = 45;
+	private double defensa= 0.5;
 	
+	/* Metodo que regresa el nombre del poder 
+	 * @return nombre
+	 */
 	public String getNombre(){
 		return nombre;
 	}
 
-	@Override
-	public String defensa(){
-		return "";
-	}
-	@Override
-	public String ataque(){
-		return 
-				"Korby" + " " +
-				frase;
-				
+	/* Metodo que regresa la defensa del poder 
+	 * @return defensa
+	 */
+	public double getDefensa(){
+		return defensa;
 	}
 
-	/* public static void main(String[] args){
-		Cocodrilo loki = new Cocodrilo();
-		System.out.println(loki.mostrarInformacion());
-	} */
+	/* Metodo que regresa el damage del poder 
+	 * @return damage
+	 */
+	private int getDamage(){
+		return damage;
+	}
+
+	/* Metodo que regresa la frase del poder 
+	 * @return frase
+	 */
+	private String getFrase(){
+		return frase;
+	}
+
+	/* Metodo que modifica el damage del poder
+	 * @param damage nuevo damage
+	 */
+	private void setDamage(int damage){
+		this.damage = damage;
+	}
+
+	/* Metodo que modifica la frase del poder
+	 * @param frase nueva frase
+	 */
+	private void setFrase(String frase){
+		this.frase = frase;
+	}
+
+	/* Metodo que modifica la defensa del poder
+	 * @param defensa nueva defensa
+	 */
+	private void setDefensa(double defensa){
+		this.defensa = defensa;
+	}
+
+
+	
+	/*Método que realiza la defensa segun el poder */
+	@Override
+	public String defensa(){
+		return "Korby se defiende con un escudo de fuego, defiende 50% de daño";
+	}
+
+	/*
+	 * Método que realiza el ataque a Megaman
+	 * @param enemigo Megaman
+	 * @return frase con el ataque
+	 */
+	@Override
+	public String ataqueMegaman(Megaman enemigo){
+		PoderMegaman poder = enemigo.getPoder();
+		if(enemigo.getDefendido()){
+			enemigo.setHP(enemigo.getHP() - (damage*poder.mostrarDefensa()));
+			enemigo.setDefendido(false);
+			return
+			frase +  " Megaman " + damage/2 + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
+		}else{
+				enemigo.setHP(enemigo.getHP() - damage);
+				return
+				frase +  " Megaman " + damage + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
+			}
+				
+    }
+       
+	/* Método que realiza el ataque a Dittu
+	 * @param enemigo Dittu
+	 * @return frase con el ataque
+	 */
+	@Override	
+	public String ataqueDittu(Dittu enemigo){
+		if(enemigo.getDefendido()){
+			enemigo.setHP(enemigo.getHP() - (damage/2));
+			enemigo.setDefendido(false);
+			return
+			frase +  " Dittu " + damage/2 + " HP" + "\nEl HP de Dittu es " + enemigo.getHP();
+		}else{
+				enemigo.setHP(enemigo.getHP() - damage);
+				return
+				frase +  " Dittu " + damage + " HP" + "\nEl HP de Dittu es " + enemigo.getHP();
+			}
+				
+    }
 }

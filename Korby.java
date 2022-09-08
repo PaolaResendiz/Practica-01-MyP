@@ -1,20 +1,41 @@
-import java.util.Random;
+
 public class Korby {
     private String [] ps = new String[0];
     private UtilidadesS uts = new UtilidadesS();
-    private PoderKorby Korby;
-    private int HP;
+    private PoderKorby Poder;
+    private boolean defendido;
+    public String fraseAtaque  = " Korby lanza un ataque eléctrico a ";
+    private int HP = 150;
     public void transformacionKorby(PoderKorby nuevoPoder){
-		Korby = nuevoPoder;
-        String frase = "Korby replica la habilidad de "+  Korby.getNombre();
+		Poder = nuevoPoder;
+        String frase = "Korby replica la habilidad de "+  Poder.getNombre();
 		System.out.println (frase);
     //     uts.leerObjetosArchivo("jugador1.txt");
     //   ps = uts.agregarAArregloString(frase);
     //   uts.EscribirObjetosArchivo("jugador1.txt",ps);
 	}
 
-    public String mostrarAtaqueKorby(){
-        return Korby.ataque();
+
+    public String ataqueMegaman(Megaman enemigo){
+        if(Poder==null){
+            enemigo.setHP(enemigo.getHP() - 40);
+            return 
+                    fraseAtaque +  " Megaman " + " ";
+        }else{
+            return Poder.ataqueMegaman(enemigo);
+        }
+       
+    }
+
+       
+    public String ataqueDittu(Dittu enemigo){
+        if(Poder==null){
+        enemigo.setHP(enemigo.getHP() - 40);
+        return 
+                fraseAtaque +  " Dittu " + " ";
+        }else{
+            return Poder.ataqueDittu(enemigo);
+        }
     }
 
     public void habilidad(){
@@ -33,16 +54,18 @@ public class Korby {
         }
     }
 
-    public String mostrarDefensaKorby(){
-        return Korby.defensa();
+    public String Defensa(){
+        defendido = true;
+        return Poder.defensa();
+        
     }
 
     public PoderKorby getPoder(){
-        return Korby;
+        return Poder;
     }
 
     public void setPoder(PoderKorby nuevoPoder){
-        Korby = nuevoPoder;
+        Poder = nuevoPoder;
     }
 
     public int getHP(){
@@ -53,5 +76,12 @@ public class Korby {
         HP = nuevoHP;
     }
     
+    public boolean getDefendido(){
+        return defendido;
+    }
+
+    public void setDefendido(boolean nuevoDefendido){
+        defendido = nuevoDefendido;
+    }
 }
 

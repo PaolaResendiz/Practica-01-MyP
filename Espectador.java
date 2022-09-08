@@ -2,6 +2,7 @@ public class Espectador implements Observador{
 	private String usuario;
 	private Stream lider;
 	private String notificacion;
+	private int numero;
 
 	public Espectador(String usuario, Stream lider){
 		this.lider = lider;
@@ -11,8 +12,12 @@ public class Espectador implements Observador{
 	
 	@Override
 	public void actualizar(){
+		LeerSt uts = new LeerSt();
+		EscribirTexto utr = new EscribirTexto();
 		notificacion = lider.getNotificacion();
-		vernotificacion();
+		String ps = uts.LeerString("jugador1.txt") + "\n" + notificacion;
+	  System.out.println(ps);
+      utr.EscribirString("jugador1.txt",ps);
 	}
 
 	public String getUsuario(){

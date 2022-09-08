@@ -1,1 +1,2 @@
-nullKirby golpea Megaman con su ataque electrico
+Megaman golpea a Korby con su espada de energía, quita al contrincante 32 HP
+Kirby golpea Megaman con su ataque electrico, quita al contrincante 54 HP

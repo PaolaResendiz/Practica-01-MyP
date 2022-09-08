@@ -1,5 +1,7 @@
 public interface PoderMegaman{
-	public String ataque();
+	public String ataqueKorby(Korby enemigo);
+	public String ataqueDittu(Dittu enemigo);
 	public String defensa();
-	public String getNombre();
+	public String mostrarNombre();
+	public String mostrarDefensa();
 }

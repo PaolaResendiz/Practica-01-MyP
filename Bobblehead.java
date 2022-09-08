@@ -1,6 +1,6 @@
 public class Bobblehead implements PoderKorby{
 	private String nombre = "Bobblehead";
-	private String frase = "Lanza burbujas con ácido. Quita al contrincante 54 HP";
+	private String frase = "Lanza burbujas con acido. Quita al contrincante 54 HP";
 	public String getNombre(){
 		return nombre;
 	}
@@ -10,11 +10,16 @@ public class Bobblehead implements PoderKorby{
 	}
 
 	@Override
-	public String ataque(){
-		return 
-				"Korby" + " " +
-				frase;
-				
-	}
+	public String ataqueMegaman(Megaman enemigo){
+        enemigo.setHP(enemigo.getHP() - 40);
+        return 
+                frase +  " Megaman " + " ";
+    }
+       
+    public String ataqueDittu(Dittu enemigo){
+        enemigo.setHP(enemigo.getHP() - 40);
+        return 
+                frase +  " Dittu " + " ";
+    }
 
 }

@@ -2,7 +2,26 @@ import java.util.Scanner;
 
 public class Combate{
 
-	
+	public void hayGanador(Korby korby, Megaman megaman, Dittu dittu){
+		for(int i = 0; i < 3; i++){
+			if(korby.getHP() <= 0){
+				System.out.println("Megaman ha ganado el combate");
+				break;
+			}
+			else if(megaman.getHP() <= 0){
+				System.out.println("Korby ha ganado el combate");
+				break;
+			}
+			else if(dittu.getHP() <= 0){
+				System.out.println("Korby ha ganado el combate");
+				break;
+			}
+			else{
+				System.out.println("El combate continua");
+				break;
+			}
+		}
+	}
 // 	/* Objeto de contexto. */
 	
 //     private PoderMegaman Megaman;
@@ -45,26 +64,43 @@ public class Combate{
 		LeerSt uts = new LeerSt();
 		EscribirTexto utr = new EscribirTexto();
 		Korby Korby = new Korby();
+		Megaman Megaman = new Megaman();
+		Dittu Dittu = new Dittu();
+
 		Combate zoo = new Combate();
 		Scanner sc = new Scanner(System.in);
 		int opcion;
+		Stream stream = new Stream();
+		Espectador espectador = new Espectador("Usuario", stream);
+		Espectador espectador2 = new Espectador("Usuario2", stream);
+		Espectador espectador3 = new Espectador("Usuario3", stream);
+		Espectador espectador4 = new Espectador("Usuario4", stream);
 		System.out.println ("Bienvenido al combate, los  competidores de este sion: /n" + 
         "1. Korby"+
         "2. Megaman"+
         "3. Dittu");
 		System.out.println ("Empieza el combate!!");
-		String frase1 = "Kirby golpea Megaman con su ataque electrico";
+		String frase1 = Korby.ataqueMegaman(Megaman);
 		System.out.println (frase1);
+		stream.setnotificacion(frase1);
+		stream.notificar();
+		// Megaman.setHP(Megaman.getHP() - 54);
+		System.out.println ("Megaman tiene " + Megaman.getHP() + " HP");
+		String frase2 = "Megaman golpea a Korby con su espada de energía, quita al contrincante 32 HP";
 		// uts.LeerString("jugador1.txt");
-      String ps = uts.LeerString("jugador1.txt") + "\n" + frase1;
-	  System.out.println(ps);
-      utr.EscribirString("jugador1.txt",ps);
+		System.out.println (frase2);
+		stream.setnotificacion(frase2);
+		stream.notificar();
+
+      
+
 
 
 		System.out.println("Korby agarra un objeto de habilidad");
 		Korby.habilidad();
+
 		// Korby.transformacionKorby(new Accho());
-		System.out.println (Korby.mostrarAtaqueKorby());
+		System.out.println (Korby.ataqueMegaman(Megaman));
 		
 
 		/* System.out.println("***BIENVENIDO AL ZOOLOGICO CHEEMS.***");

@@ -1,19 +1,34 @@
 public class Megaman {
-    private PoderMegaman Megaman;
-    private int HP;
+    private PoderMegaman Poder;
+    private boolean defendido;
+    public String fraseAtaque  = " Korby lanza un ataque eléctrico a ";
+    private int HP= 150;
     private void transformacionMegaman(PoderMegaman nuevoPoder){
-		Megaman = nuevoPoder;
+		Poder = nuevoPoder;
 		System.out.println ("Megaman replica la habilidad de "  + nuevoPoder.getNombre());
 	}
 
-    public String mostrarAtaqueMegaman(){
-        return Megaman.ataque();
+    public String ataqueKorby(Korby enemigo){
+        if(Poder==null){
+            enemigo.setHP(enemigo.getHP() - 40);
+            return 
+                    fraseAtaque +  " Korby " + " ";
+        }else{
+            return Poder.ataqueKorby(enemigo);
+        }
+       
     }
 
-    public String mostrarDefensaMegaman(){
-        return Megaman.defensa();
+       
+    public String ataqueDittu(Dittu enemigo){
+        if(Poder==null){
+        enemigo.setHP(enemigo.getHP() - 40);
+        return 
+                fraseAtaque +  " Dittu " + " ";
+        }else{
+            return Poder.ataqueDittu(enemigo);
+        }
     }
-
     
     public void habilidad(){
         int randomNum = 1 + (int)(Math.random() * 3);
@@ -30,12 +45,18 @@ public class Megaman {
         }
     }
 
+    public String Defensa(){
+        defendido = true;
+        return Poder.defensa();
+        
+    }
+
     public PoderMegaman getPoder(){
-        return Megaman;
+        return Poder;
     }
 
     public void setPoder(PoderMegaman nuevoPoder){
-        Megaman = nuevoPoder;
+        Poder = nuevoPoder;
     }
 
     public int getHP(){
@@ -44,6 +65,14 @@ public class Megaman {
 
     public void setHP(int nuevoHP){
         HP = nuevoHP;
+    }
+
+    public boolean getDefendido(){
+        return defendido;
+    }
+
+    public void setDefendido(boolean nuevoDefendido){
+        defendido = nuevoDefendido;
     }
 
 }
