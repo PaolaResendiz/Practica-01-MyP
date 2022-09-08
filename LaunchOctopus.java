@@ -1,6 +1,6 @@
 public class LaunchOctopus implements PoderMegaman{
 	private String nombre = "Launch Octopus";
-	private String frase = "Los tentaculos de Octopus absorben la energía del usuario. Infringe 30 HP al contrincante.";
+	private String frase = "Los tentaculos de Megaman absorben la energía del usuario. Infringe al contrincante ";
 	private int damage = 60;
 	private double defensa= 0.7;
 	
@@ -70,6 +70,12 @@ public class LaunchOctopus implements PoderMegaman{
 	public String ataqueKorby(Korby enemigo){
 		PoderKorby poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Korby " + damage*defensa + " HP" + "\nEl HP de Korby es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
@@ -90,6 +96,13 @@ public class LaunchOctopus implements PoderMegaman{
 	public String ataqueDittu(Dittu enemigo){
 		PoderDittu poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			//enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Dittu " + damage*defensa + " HP" + "\nEl HP de Dittu es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return

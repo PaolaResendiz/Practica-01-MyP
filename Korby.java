@@ -40,7 +40,6 @@ public class Korby {
 
     public void habilidad(){
         int randomNum = 1 + (int)(Math.random() * 3);
-        System.out.println(randomNum);
         switch(randomNum){
             case 1:
             transformacionKorby(new Accho());

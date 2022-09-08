@@ -1,6 +1,6 @@
 public class Metapod implements PoderDittu{
 	private String nombre = "Metapod";
-	private String frase = "Utiliza un ataque basico y quita al contrincante 15 HP";
+	private String frase = "Dittu utiliza un ataque basico y quita al contrincante ";
 	private int damage = 20;
 	private double defensa= 0.4;
 	
@@ -68,8 +68,15 @@ public class Metapod implements PoderDittu{
 	 */
 	@Override
 	public String ataqueKorby(Korby enemigo){
+
 		PoderKorby poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Korby " + damage*defensa + " HP" + "\nEl HP de Korby es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
@@ -90,6 +97,12 @@ public class Metapod implements PoderDittu{
 	public String ataqueMegaman(Megaman enemigo){
 		PoderMegaman poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " megaman " + damage*defensa + " HP" + "\nEl HP de megaman es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return

@@ -1,6 +1,6 @@
 public class Suicune implements PoderDittu{
 	private String nombre = "Suicune";
-	private String frase = "Utiliza unos colmillos que al morder convierte en hielo al contrincante. Pierde 30 HP";
+	private String frase = "Ditto utiliza unos colmillos que al morder convierte en hielo al contrincante. Quita al contrincante";
 	
 	private int damage = 45;
 	private double defensa= 0.75;
@@ -71,6 +71,12 @@ public class Suicune implements PoderDittu{
 	public String ataqueKorby(Korby enemigo){
 		PoderKorby poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Korby " + damage*defensa + " HP" + "\nEl HP de Korby es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
@@ -91,6 +97,12 @@ public class Suicune implements PoderDittu{
 	public String ataqueMegaman(Megaman enemigo){
 		PoderMegaman poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Megaman " + damage*defensa + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return

@@ -1,6 +1,6 @@
 public class Velguarder implements PoderMegaman{
 	private String nombre = "Velguarder";
-	private String frase = "Absorbe el miedo que tenga su oponente y ataca con sus garras de hierro a este. Quita al enemigo ";
+	private String frase = "Megaman absorbe el miedo que tenga su oponente y ataca con sus garras de hierro a este. Quita al enemigo ";
 	private int damage = 45;
 	private double defensa= 0.75;
 	
@@ -68,8 +68,16 @@ public class Velguarder implements PoderMegaman{
 	 */
 	@Override
 	public String ataqueKorby(Korby enemigo){
+		
 		PoderKorby poder = enemigo.getPoder();
+	
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Korby " + damage*defensa + " HP" + "\nEl HP de Korby es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
@@ -88,8 +96,16 @@ public class Velguarder implements PoderMegaman{
 	 */
 	@Override	
 	public String ataqueDittu(Dittu enemigo){
+		System.out.println(enemigo);
 		PoderDittu poder = enemigo.getPoder();
+		System.out.println(poder);
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Dittu " + damage*defensa + " HP" + "\nEl HP de Ditttu es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return

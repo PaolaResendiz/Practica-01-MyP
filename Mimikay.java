@@ -1,6 +1,6 @@
 public class Mimikay implements PoderDittu{
 	private String nombre = "Mimikay";
-	private String frase = "De las sombras puede crear unas manos las cuales te arañan y quita al contrincante 20 HP";
+	private String frase = "Dittu de las sombras puede crear unas manos las cuales te arañan y quita al contrincante";
 	
 	private int damage = 60;
 	private double defensa= 0.5;
@@ -71,6 +71,12 @@ public class Mimikay implements PoderDittu{
 	public String ataqueKorby(Korby enemigo){
 		PoderKorby poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Korby " + damage*defensa + " HP" + "\nEl HP de Korby es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
@@ -91,6 +97,12 @@ public class Mimikay implements PoderDittu{
 	public String ataqueMegaman(Megaman enemigo){
 		PoderMegaman poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Megaman " + damage*defensa + " HP" + "\nEl HP de megaman es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return

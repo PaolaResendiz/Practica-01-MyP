@@ -18,7 +18,7 @@ class LeerSt {
 			//ciclo para leer todo el archivo
 			while (in.hasNext()) {
 				//recuperamos el objeto
-				linea = in.nextLine();
+				linea += in.nextLine();
 			}
         } catch(FileNotFoundException e) {
             System.out.println("No se encontró tal archivo");

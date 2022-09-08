@@ -70,6 +70,12 @@ public class AlbertoWilly implements PoderMegaman{
 	public String ataqueKorby(Korby enemigo){
 		PoderKorby poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Korby " + damage*defensa + " HP" + "\nEl HP de Korby es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
@@ -90,6 +96,12 @@ public class AlbertoWilly implements PoderMegaman{
 	public String ataqueDittu(Dittu enemigo){
 		PoderDittu poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Dittu " + damage*defensa + " HP" + "\nEl HP de Dittu es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return

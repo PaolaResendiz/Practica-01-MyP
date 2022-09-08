@@ -2,24 +2,43 @@ import java.util.Scanner;
 
 public class Combate{
 
-	public void hayGanador(Korby korby, Megaman megaman, Dittu dittu){
-		for(int i = 0; i < 3; i++){
+	public String hayGanador(Korby korby, Megaman megaman, Dittu dittu){
+
 			if(korby.getHP() <= 0){
-				System.out.println("Megaman ha ganado el combate");
-				break;
+				if(megaman.getHP() > dittu.getHP() )
+					return"Gana Megaman";
+				else if(dittu.getHP() > megaman.getHP() )
+					return"Gana Dittu";
+				else
+					return"Megaman y Dittu empatan";
 			}
 			else if(megaman.getHP() <= 0){
-				System.out.println("Korby ha ganado el combate");
-				break;
+				if(korby.getHP() > dittu.getHP() )
+					return"Gana Korby";
+				else if(dittu.getHP() > korby.getHP() )
+					return"Gana Dittu";
+				else
+					return"Korby y Dittu empatan";
 			}
 			else if(dittu.getHP() <= 0){
-				System.out.println("Korby ha ganado el combate");
-				break;
+				if(korby.getHP() > megaman.getHP() )
+					return"Gana Korby";
+				else if(megaman.getHP() > korby.getHP() )
+					return"Gana Megaman";
+				else
+					return"Korbey Megaman empatan";
 			}
-			else{
-				System.out.println("El combate continua");
-				break;
-			}
+			else
+				return"";
+	}
+
+	public void verificarGanador(Korby korby, Megaman megaman, Dittu dittu, Stream stream){
+		String ganador = hayGanador(korby, megaman, dittu);
+		if(ganador != ""){
+			System.out.println(ganador);
+			stream.setnotificacion(ganador);
+			stream.notificar();
+			System.exit(0);
 		}
 	}
 // 	/* Objeto de contexto. */
@@ -61,20 +80,20 @@ public class Combate{
 //     }
 
 	public static void main(String[] args){
-		LeerSt uts = new LeerSt();
+		Combate combate = new Combate();
 		EscribirTexto utr = new EscribirTexto();
 		Korby Korby = new Korby();
 		Megaman Megaman = new Megaman();
 		Dittu Dittu = new Dittu();
+		for (int index = 1; index < 5; index++) {
+			utr.EscribirString("jugador"+index+".txt", "Bienvendio jugador "+ index); 
+		}
 
-		Combate zoo = new Combate();
-		Scanner sc = new Scanner(System.in);
-		int opcion;
 		Stream stream = new Stream();
-		Espectador espectador = new Espectador("Usuario", stream);
-		Espectador espectador2 = new Espectador("Usuario2", stream);
-		Espectador espectador3 = new Espectador("Usuario3", stream);
-		Espectador espectador4 = new Espectador("Usuario4", stream);
+		Espectador espectador = new Espectador("Usuario", stream,1);
+		Espectador espectador2 = new Espectador("Usuario2", stream, 2);
+		Espectador espectador3 = new Espectador("Usuario3", stream,3);
+		Espectador espectador4 = new Espectador("Usuario4", stream, 4);
 		System.out.println ("Bienvenido al combate, los  competidores de este torneo son: \n" + 
         "1. Korby"+
         "\n2. Megaman"+
@@ -84,29 +103,64 @@ public class Combate{
 		System.out.println (frase1);
 		stream.setnotificacion(frase1);
 		stream.notificar();
-		String frase2 = Megaman.ataqueKorby(Korby);
+		Dittu.Defensa();
+		String frase2 =  Korby.ataqueDittu(Dittu);
 		System.out.println (frase2);
 		stream.setnotificacion(frase2);
 		stream.notificar();
-		String frase3 = Korby.ataqueDittu(Dittu);
+		Korby.habilidad();
+		String frase3 = Korby.ataqueMegaman(Megaman);
+		combate.verificarGanador(Korby, Megaman, Dittu, stream);
 		System.out.println (frase3);
 		stream.setnotificacion(frase3);
 		stream.notificar();
-		String frase4 = Dittu.ataqueKorby(Korby);
+		Megaman.habilidad();
+		String frase4 = Dittu.ataqueMegaman(Megaman);
+		combate.verificarGanador(Korby, Megaman, Dittu, stream);
 		System.out.println (frase4);
 		stream.setnotificacion(frase4);
 		stream.notificar();
 		System.out.println(Korby.getHP() + " " + Megaman.getHP() + " " + Dittu.getHP()); 
-
+		String frase5= Megaman.ataqueDittu(Dittu);
+		combate.verificarGanador(Korby, Megaman, Dittu, stream);
+		System.out.println (frase5);
+		stream.setnotificacion(frase5);
+		stream.notificar();
+		Dittu.habilidad();
+		String frase6 = Dittu.ataqueKorby(Korby);
+		combate.verificarGanador(Korby, Megaman, Dittu, stream);
+		System.out.println (frase6);
+		stream.setnotificacion(frase6);
+		stream.notificar();
+		String frase7 = Dittu.ataqueMegaman(Megaman);
+		combate.verificarGanador(Korby, Megaman, Dittu, stream);
+		System.out.println (frase7);
+		stream.setnotificacion(frase7);
+		stream.notificar();
+		String frase8= Megaman.ataqueDittu(Dittu);
+		combate.verificarGanador(Korby, Megaman, Dittu, stream);
+		System.out.println (frase8);
+		stream.setnotificacion(frase8);
+		stream.notificar();
+		String frase9= Megaman.ataqueKorby(Korby);
+		combate.verificarGanador(Korby, Megaman, Dittu, stream);
+		System.out.println (frase9);
+		stream.setnotificacion(frase9);
+		stream.notificar();
+		String frase10 = Korby.ataqueMegaman(Megaman);
+		combate.verificarGanador(Korby, Megaman, Dittu, stream);
+		System.out.println (frase10);
+		stream.setnotificacion(frase10);
+		stream.notificar();
       
 
 
 
-		System.out.println("Korby agarra un objeto de habilidad");
-		Korby.habilidad();
+		// System.out.println("Korby agarra un objeto de habilidad");
+		// Korby.habilidad();
 
-		// Korby.transformacionKorby(new Accho());
-		System.out.println (Korby.ataqueMegaman(Megaman));
+		// // Korby.transformacionKorby(new Accho());
+		// System.out.println (Korby.ataqueMegaman(Megaman));
 		
 
 		/* System.out.println("***BIENVENIDO AL ZOOLOGICO CHEEMS.***");

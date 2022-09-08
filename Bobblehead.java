@@ -70,6 +70,12 @@ public class Bobblehead implements PoderKorby{
 	public String ataqueMegaman(Megaman enemigo){
 		PoderMegaman poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Megman " + damage*defensa + " HP" + "\nEl HP de Megaman es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
@@ -90,6 +96,12 @@ public class Bobblehead implements PoderKorby{
 	public String ataqueDittu(Dittu enemigo){
 		PoderDittu poder = enemigo.getPoder();
 		if(enemigo.getDefendido()){
+			if(poder == null){
+				enemigo.setHP((int)(enemigo.getHP() - (damage*.8)));
+				enemigo.setDefendido(false);
+				return
+				frase +  " Dittu " + damage*defensa + " HP" + "\nEl HP de Dittu es " + enemigo.getHP();
+			}
 			enemigo.setHP((int)(enemigo.getHP() - (damage*poder.mostrarDefensa())));
 			enemigo.setDefendido(false);
 			return
